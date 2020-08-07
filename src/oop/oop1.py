@@ -17,3 +17,49 @@
 #     pass
 #
 # Put a comment noting which class is the base class
+
+class Vehicle:
+    def __init__(self):
+        pass  # base class!!!
+
+# extends Vehicle
+
+
+class GroundVehicle(Vehicle):
+    def __init__(self):
+        super().__init__()
+        pass
+
+
+class FlightVehicle(Vehicle):
+    def __init__(self):
+        super().__init__()
+        pass
+
+# extends GroundVehicle
+
+
+class Car(GroundVehicle):
+    def __init__(self):
+        super().__init__()
+        pass
+
+
+class Motorcycle(GroundVehicle):
+    def __init__(self):
+        super().__init__()
+        pass
+
+# extends flightVehicle
+
+
+class Starship(FlightVehicle):
+    def __init__(self):
+        super().__init__()
+        pass
+
+
+class Airplane(FlightVehicle):
+    def __init__(self):
+        super().__init__()
+        pass
