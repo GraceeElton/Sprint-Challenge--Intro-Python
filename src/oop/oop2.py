@@ -3,27 +3,19 @@
 # Also change it so the num_wheels defaults to 4 if not specified when the
 # object is constructed.
 
-#   if len(str(num_wheels)) < 1:
-#            self.num_wheels = 4
-#         else:
-#             self.num_wheels = num_wheels
-
 
 class GroundVehicle():
-    def __init__(self, num_wheels):
-        if (num_wheels) < 1:
-            self.num_wheels = 4
-        else:
-            self.num_wheels = num_wheels
+    def __init__(self, num_wheels=4):
+        self.num_wheels = num_wheels
 
     def __str__(self):
         return f'Number of Wheels: {self.num_wheels}'
 
     def drive(self):
-        return f"vrooom"
+        return f"vroooom"
 
 
-print(GroundVehicle(0), 'DID THIS WORK?')
+print(GroundVehicle(), 'DID THIS WORK?')
 
 print(GroundVehicle(2).drive())
 
@@ -38,7 +30,7 @@ print(GroundVehicle(2).drive())
 
 
 class Motorcycle(GroundVehicle):
-    def __init__(self, num_wheels):
+    def __init__(self, num_wheels=2):
         super().__init__(num_wheels)
         self.num_wheels = 2
 
@@ -53,11 +45,11 @@ print(Motorcycle(3).drive())
 # TODO
 
 vehicles = [
-    GroundVehicle(4),
-    GroundVehicle(4),
-    Motorcycle(2),
-    GroundVehicle(4),
-    Motorcycle(2),
+    GroundVehicle(),
+    GroundVehicle(),
+    Motorcycle(),
+    GroundVehicle(),
+    Motorcycle(),
 ]
 
 # Go through the vehicles list and print the result of calling drive() on each.
@@ -66,5 +58,3 @@ vehicles = [
 
 for v in vehicles:
     print(v.drive())
-
-# idk why it is printing none
